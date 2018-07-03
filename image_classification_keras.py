@@ -39,8 +39,8 @@ def get_class(img_path, label_dictionary):
 	file_id = img_path.split('.')[0]
 	return label_dictionary[file_id]
 
-root_dir = ''
-label_dictionary = load_labels(root_dir + "labels")
+root_dir = '~/repositories/image-classification/'
+label_dictionary = load_labels(root_dir + "labels.csv")
 
 train_labels = []
 test_labels = []
