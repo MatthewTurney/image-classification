@@ -131,3 +131,9 @@ Y_test = test_labels
 y_pred = model.predict_classes(X_test)
 acc = np.sum(y_pred == y_test) / np.size(y_pred)
 print("Test accuracy = {}".format(acc))
+
+probabilities = model.predict(eval_images)
+print(probabilities[:5])
+res = np.hstack(np.array(label_dictionary.keys()), probabilities)
+print(res[:5])
+numpy.savetxt("evl_results.csv", res, delimiter=",")
